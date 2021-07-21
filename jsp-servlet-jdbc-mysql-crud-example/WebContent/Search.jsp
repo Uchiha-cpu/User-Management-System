@@ -27,14 +27,14 @@
             <div class="container col-md-5">
                 <div class="card">
                     <div class="card-body">
-                        <c:if test="${user != null}">
+                        
                             <form action="searching" method="get">
-                        </c:if>
+              
                         <caption>
                             <h2>
-                                <c:if test="${user != null}">
+                                
                                     Search User
-                                </c:if>
+                              
                                 
                             </h2>
                         </caption>

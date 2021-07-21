@@ -123,13 +123,14 @@ public class UserServlet extends HttpServlet {
 
 	private void search(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Search.jsp");		
+		int id=request.getIntHeader("id");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String country = request.getParameter("country");
-		User newUser = new User(name, email, country);
+		User newUser = new User(id,name, email, country);
 		User existingUser=userDAO.search(newUser);
 		request.setAttribute("listUser",existingUser);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Search.jsp");
 		dispatcher.forward(request, response);
 	}
 	
